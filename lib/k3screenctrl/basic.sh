@@ -17,7 +17,10 @@ fi
 
 FW_VERSION=${BUILD_ID:0:17}
 
+temp=$(cat /sys/class/thermal/thermal_zone0/temp)
+temp=`echo "scale=1; $temp/1000" | bc`
+
 echo $PRODUCT_NAME
-echo $HW_VERSION
-echo $FW_VERSION
+echo $HW_VERSION" "$temp
+echo "LEDE "$FW_VERSION
 echo $MAC_ADDR
