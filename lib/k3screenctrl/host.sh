@@ -38,7 +38,7 @@ do
 	outstr=${outstr}'\n'${dw_sp[x]}
 	mac=${mac_hostname[0]//:/}
 	mac=$(echo ${mac:0:6} | tr '[a-z]' '[A-Z]')
-	logo=$(cat /lib/k3screenctrl/verdor.txt | grep ${mac} | head -1 | awk '{print $1}')
+	logo=$(cat /lib/k3screenctrl/vendor.txt | grep ${mac} | head -1 | awk '{print $1}')
 	if [[ ${logo} = "" || ${logo}>29 ]]; then
 		outstr=${outstr}'\n'"0"
 	else
